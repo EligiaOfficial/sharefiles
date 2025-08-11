@@ -204,7 +204,7 @@
     </div>
 
     <div class="mt-2">
-      <Label class="py-2" for="file">Large file input</Label>
+      <Label class="py-2" for="file">File</Label>
       <Fileupload id="file" name="file" size="lg" bind:files={file} />
     </div>
 

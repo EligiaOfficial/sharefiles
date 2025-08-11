@@ -8,6 +8,8 @@
     NavLi,
     NavUl,
     Spinner,
+    Dropdown,
+    DropdownItem
   } from "flowbite-svelte";
   import { currentUser, pb } from "$lib/stores/pocketbase";
   import { onMount } from "svelte";
@@ -21,6 +23,15 @@
       loading = false;
     });
   });
+
+  async function sendResetPassword() {
+    try {
+      await pb.collection('users').requestPasswordReset($currentUser.email);
+      console.log('Password reset email sent!');
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
 </script>
 
 {#if loading}
@@ -73,14 +84,18 @@
       >
       <NavLi href="/new">New</NavLi>
       <NavLi href="/invite">Invite</NavLi>
-      <NavLi
-        href="/"
-        on:click={() => {
+      <NavLi class="cursor-pointer">
+        Account
+      </NavLi>
+      <Dropdown>
+        <DropdownItem on:click={sendResetPassword}>Send reset password mail</DropdownItem>
+        <DropdownItem href="/"
+                      on:click={() => {
           pb.authStore.clear();
           $searchQuery = "";
           window.location.href = "/login";
-        }}>Logout</NavLi
-      >
+        }}>Sign out</DropdownItem>
+      </Dropdown>
     </NavUl>
     <DarkMode class="p-2 hidden xl:inline-flex" size="lg" />
 

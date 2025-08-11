@@ -24,7 +24,7 @@
       } else {
         posts = await pb.collection("posts").getList(1, 50, {
           expand: "user_id",
-          sort: "-created",
+          sort: "-updated",
         });
       }
     } catch (error) {
@@ -76,7 +76,7 @@
     {:else}
       <div class="flex flex-col">
         <Heading tag="h2" customSize="text-4xl font-extrabold">
-          No results <span class="text-orange-500">:</span>
+          No results <span class="text-orange-500">:(</span>
         </Heading>
         <P class="my-4 text-gray-500"
           >Try searching for keywords in the title, description, or tags.</P
