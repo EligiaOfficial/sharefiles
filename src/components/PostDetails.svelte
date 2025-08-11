@@ -1,6 +1,6 @@
 <script lang="ts">
   import { currentUser, pb } from "$lib/stores/pocketbase";
-  import { env } from "$env/dynamic/public";
+  import { env } from "$env/dynamic/private";
   import { goto, pushState } from "$app/navigation";
   import { createEventDispatcher } from "svelte";
 

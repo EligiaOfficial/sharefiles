@@ -606,8 +606,8 @@
     "listRule": "",
     "viewRule": null,
     "createRule": "",
-    "updateRule": "id = @request.auth.id",
-    "deleteRule": "id = @request.auth.id",
+    "updateRule": "",
+    "deleteRule": "",
     "name": "invites",
     "type": "base",
     "fields": [

@@ -14,7 +14,7 @@
   import { currentUser, pb } from "$lib/stores/pocketbase";
   import Error from "../../components/Error.svelte";
   import { goto } from "$app/navigation";
-  import { env } from "$env/dynamic/public";
+  import { env } from "$env/dynamic/private";
 
   let progress = $state(0);
   let file = $state<FileList | undefined>(undefined);

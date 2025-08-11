@@ -44,6 +44,7 @@
 
       await pb.collection("invites").update(invite.id, updatedInvite);
 
+      // Redirect to home
       return await goto("/");
     } catch (err: any) {
       return (error = err?.response);

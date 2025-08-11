@@ -1,0 +1,41 @@
+services:
+  svelte-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    container_name: sharefiles-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PUBLIC_POCKETBASE_URL=${PUBLIC_POCKETBASE_URL}
+    depends_on:
+      pocketbase:
+        condition: service_healthy
+    networks:
+      - sharefiles-network
+
+  pocketbase:
+    image: ghcr.io/muchobien/pocketbase:latest
+    container_name: sharefiles-pocketbase
+    restart: unless-stopped
+    ports:
+      - "8090:8090"
+    volumes:
+      - ./pocketbase/pb_data:/pb_data
+      - ./pocketbase/pb_public:/pb_public
+      - ./pocketbase/pb_hooks:/pb_hooks
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:8090/api/health || exit 1
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - sharefiles-network
+
+networks:
+  sharefiles-network:
+    driver: bridge

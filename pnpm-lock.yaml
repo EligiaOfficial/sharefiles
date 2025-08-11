@@ -11,6 +11,12 @@ importers:
       keycloak-js:
         specifier: ^26.1.0
         version: 26.1.0
+      pocketbase:
+        specifier: ^0.25.1
+        version: 0.25.2
+      uuid:
+        specifier: ^11.0.5
+        version: 11.1.0
     devDependencies:
       '@iconify-json/svg-spinners':
         specifier: ^1.2.2
@@ -18,6 +24,9 @@ importers:
       '@sveltejs/adapter-auto':
         specifier: ^3.0.0
         version: 3.3.1(@sveltejs/kit@2.16.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.18.0)(vite@5.4.11(sass-embedded@1.83.4)))(svelte@5.18.0)(vite@5.4.11(sass-embedded@1.83.4)))
+      '@sveltejs/adapter-static':
+        specifier: ^3.0.0
+        version: 3.0.9(@sveltejs/kit@2.16.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.18.0)(vite@5.4.11(sass-embedded@1.83.4)))(svelte@5.18.0)(vite@5.4.11(sass-embedded@1.83.4)))
       '@sveltejs/kit':
         specifier: ^2.0.0
         version: 2.16.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.18.0)(vite@5.4.11(sass-embedded@1.83.4)))(svelte@5.18.0)(vite@5.4.11(sass-embedded@1.83.4))
@@ -407,6 +416,11 @@ packages:
 
   '@sveltejs/adapter-auto@3.3.1':
     resolution: {integrity: sha512-5Sc7WAxYdL6q9j/+D0jJKjGREGlfIevDyHSQ2eNETHcB1TKlQWHcAo8AS8H1QdjNvSXpvOwNjykDUHPEAyGgdQ==}
+    peerDependencies:
+      '@sveltejs/kit': ^2.0.0
+
+  '@sveltejs/adapter-static@3.0.9':
+    resolution: {integrity: sha512-aytHXcMi7lb9ljsWUzXYQ0p5X1z9oWud2olu/EpmH7aCu4m84h7QLvb5Wp+CFirKcwoNnYvYWhyP/L8Vh1ztdw==}
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
 
@@ -903,6 +917,9 @@ packages:
   pkg-types@1.3.1:
     resolution: {integrity: sha512-/Jm5M4RvtBFVkKWRu2BLUTNP8/M2a+UwuAX+ae4770q1qVGtfjG+WTCupoZixokjmHiry8uI+dlY8KXYV5HVVQ==}
 
+  pocketbase@0.25.2:
+    resolution: {integrity: sha512-ONZl1+qHJMnhR2uacBlBJ90lm7njtL/zy0606+1ROfK9hSL4LRBRc8r89rMcNRzPzRqCNyoFTh2Qg/lYXdEC1w==}
+
   postcss-import@15.1.0:
     resolution: {integrity: sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew==}
     engines: {node: '>=14.0.0'}
@@ -1290,6 +1307,10 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
+  uuid@11.1.0:
+    resolution: {integrity: sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==}
+    hasBin: true
+
   varint@6.0.0:
     resolution: {integrity: sha512-cXEIW6cfr15lFv563k4GuVuW/fiwjknytD37jIOLSdSWuOI6WnO/oKwmP2FQTU2l01LP8/M5TSAJpzUaGe3uWg==}
 
@@ -1602,6 +1623,10 @@ snapshots:
     dependencies:
       '@sveltejs/kit': 2.16.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.18.0)(vite@5.4.11(sass-embedded@1.83.4)))(svelte@5.18.0)(vite@5.4.11(sass-embedded@1.83.4))
       import-meta-resolve: 4.1.0
+
+  '@sveltejs/adapter-static@3.0.9(@sveltejs/kit@2.16.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.18.0)(vite@5.4.11(sass-embedded@1.83.4)))(svelte@5.18.0)(vite@5.4.11(sass-embedded@1.83.4)))':
+    dependencies:
+      '@sveltejs/kit': 2.16.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.18.0)(vite@5.4.11(sass-embedded@1.83.4)))(svelte@5.18.0)(vite@5.4.11(sass-embedded@1.83.4))
 
   '@sveltejs/kit@2.16.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.18.0)(vite@5.4.11(sass-embedded@1.83.4)))(svelte@5.18.0)(vite@5.4.11(sass-embedded@1.83.4))':
     dependencies:
@@ -2069,6 +2094,8 @@ snapshots:
       mlly: 1.7.4
       pathe: 2.0.2
 
+  pocketbase@0.25.2: {}
+
   postcss-import@15.1.0(postcss@8.5.1):
     dependencies:
       postcss: 8.5.1
@@ -2459,6 +2486,8 @@ snapshots:
       picocolors: 1.1.1
 
   util-deprecate@1.0.2: {}
+
+  uuid@11.1.0: {}
 
   varint@6.0.0: {}
 

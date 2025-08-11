@@ -4,7 +4,7 @@
   import { page } from "$app/stores";
   import { createEventDispatcher } from "svelte";
   import { determineFileType } from "$lib/utils/fileUtils";
-  import { env } from "$env/dynamic/public";
+  import { env } from "$env/dynamic/private";
   import { searchQuery } from "$lib/stores/search";
 
   import {

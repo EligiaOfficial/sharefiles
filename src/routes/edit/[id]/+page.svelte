@@ -17,7 +17,7 @@
     Progressbar,
     Textarea,
   } from "flowbite-svelte";
-  import { env } from "$env/dynamic/public";
+  import { env } from "$env/dynamic/private";
   import { goto } from "$app/navigation";
   import NotFound from "../../../components/NotFound.svelte";
 

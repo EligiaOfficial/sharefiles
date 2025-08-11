@@ -1,4 +1,5 @@
 node_modules
+pocketbase/
 
 # Output
 .output
@@ -24,3 +25,6 @@ vite.config.ts.timestamp-*
 
 # idea
 .idea/*
+
+# vscode
+.vscode/*

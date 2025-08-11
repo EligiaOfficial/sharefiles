@@ -10,7 +10,7 @@
     TrashBinOutline,
     UserAddOutline,
   } from "flowbite-svelte-icons";
-  import { env } from "$env/dynamic/public";
+  import { env } from "$env/dynamic/private";
   import { pb } from "$lib/stores/pocketbase";
   import { determineFileType } from "$lib/utils/fileUtils";
   import NotFound from "../../../components/NotFound.svelte";
